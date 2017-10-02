@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PuzzlePiece : MonoBehaviour
 {
@@ -45,15 +46,6 @@ public class PuzzlePiece : MonoBehaviour
     }
 
 
-    Color PickRandomColor()
-    {
-
-        return new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), 1);
-
-
-
-    }
-
 
     // Use this for initialization
     void Start()
@@ -62,20 +54,14 @@ public class PuzzlePiece : MonoBehaviour
         {
             PuzzlePiece.GenerateColorList();
         }
-        GetComponent<SpriteRenderer>().color = colorList[Random.Range(0, colorList.Count)];
+        GetComponent<SpriteRenderer>().color = colorList[Random.Range(0, colorList.Count - 1)];
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
-
-
-
-
-    // 
 
 
 }
